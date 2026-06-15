@@ -83,7 +83,7 @@ cardNameInput.addEventListener('input', () = {
     const upper = cardNameInput.value.toUpperCase();
 
     cardNameInput.value = upper;
-    cardNameDisplay.textContent = upper  'PETER URBAN';
+    cardNameDisplay.textContent = upper  'Name Surname';
 });
 
  Срок действия
